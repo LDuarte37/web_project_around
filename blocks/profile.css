@@ -1,9 +1,91 @@
 .profile {
+    max-width: 1280px; 
+    margin: 0 auto;
+}
+
+/* Contenedor que agrupa el avatar, texto, checkmark y botón de añadir */
+.profile__details {
     display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    
+    /* === PROPIEDADES DE FIGMA === */
+    width: 880px;
+    height: 120px;
+    
+    /* Margen externo para simular las coordenadas de Figma (Top: 159px, Left: 200px) */
+    /* margin-top: 159px;
+    margin-left: 200px; */
+    
+    /* Relleno interno (padding) para distribuir los elementos. Ajustado para el centrado vertical y horizontal. */
+    box-sizing: border-box; 
 }
 
 .profile__avatar {
-    width: 120px;
-    height: 120px;
-    padding-right: 30px;
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    overflow: hidden;
+    margin-right: 15px;
+    /* La imagen de Cousteau tiene un borde rojo en el sombrero que es parte de la imagen, no de CSS */
+}
+
+.profile__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile__text {
+    margin-right: 10px;
+}
+
+.profile__name {
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.profile__role {
+    font-size: 16px;
+    color: #fff;
+}
+
+.profile__edit-button {
+    background: transparent;
+    color: #fff;
+    border: none; /* Generalmente, un icono de edición no lleva borde */
+    font-size: 18px; /* Tamaño del icono */
+    cursor: pointer;
+    margin-left: 5px; /* Pequeño espacio a la izquierda del nombre */
+    margin-right: auto; /* IMPORTANTE: Esto sigue empujando el botón '+' al extremo derecho */
+    padding: 0;
+    line-height: 1; /* Para alinear verticalmente el icono */
+    
+    /* Si el icono es un cuadrado pequeño con borde, usarías: */
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile__add-button {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff; 
+    border-radius: 4px; 
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    line-height: 1; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
