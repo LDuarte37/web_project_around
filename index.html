@@ -14,22 +14,6 @@
     <main class="content">
       <section class="profile">
         <div class="profile__details">
-          <!-- <img src="images/Avatar.png" alt="Avatar" class="profile__avatar" />
-          <div class="profile__info">
-            <h1 class="profile__info-name">Juan Carlos Tinoco</h1>
-            <h2 class="profile__info-about">Finalboss</h2>
-          </div>
-          <button
-            class="profile__edit-button"
-            type="button"
-            aria-label="Edit profile"
-          ></button>
-          <button
-            class="profile__add-button"
-            type="button"
-            aria-label="Add place"
-          ></button> -->
-          <!----------------------------------------------------------------------------------------------------->
           <div class="profile__avatar">
             <img
               src="images/avatar.jpg"
@@ -38,16 +22,29 @@
           </div>
 
           <div class="profile__text">
-            <h3 class="profile__name">Jacques Cousteau</h3>
+            <div class="profile__name_edit-button">
+              <h3 class="profile__name">Jacques Cousteau</h3>
+              <button class="profile__edit-button">
+                <img
+                  src="images/edit.svg"
+                  alt="Edit icon"
+                  class="profile__edit-icon"
+                />
+              </button>
+            </div>
             <span class="profile__role">Explorador</span>
           </div>
 
-          <button class="profile__edit-button">
-            <span>&#9998;</span>
+          <button class="profile__add-button">
+            <img
+              src="images/add.svg"
+              alt="Add icon"
+              class="profile__add-icon"
+            />
           </button>
-
-          <button class="profile__add-button">+</button>
         </div>
+
+        
       </section>
 
       <section class="elements"></section>
