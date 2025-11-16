@@ -1,0 +1,78 @@
+/* ----- Fondo del popup ----- */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* ----- Contenedor blanco ----- */
+.popup__container {
+  background: white;
+  padding: 30px;
+  width: 430px;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ----- Botón cerrar (X) ----- */
+.popup__close-button {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/close.svg");
+  background-size: cover;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup__close-button:hover {
+  opacity: 0.6;
+}
+
+/* ----- Inputs ----- */
+.popup__input {
+  width: 100%;
+  padding: 12px 2px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+/* ----- Botón deshabilitado ----- */
+.popup__submit-button {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Estilo del botón desactivado */
+.popup__submit-button_disabled {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+/* Estilo del botón activo */
+.popup__submit-button_enabled {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
