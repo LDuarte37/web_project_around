@@ -4,11 +4,17 @@
     <title>Around the U.S.</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Proyecto final para el sprint 7 de TripleTen"
+    >
+    <meta name="author" content="Luis Duarte" >
+    <meta name="keywords" content="TripleTen, Sprint 7" >
     <link rel="stylesheet" href="pages/index.css" />
   </head>
   <body class="page">
     <header class="header">
-      <img src="logo.svg" alt="Around the U.S. logo" class="logo" />
+      <img src="images/logo.svg" alt="Around the U.S. logo" class="logo" />
     </header>
 
     <main class="content">
@@ -191,54 +197,6 @@
       </div>
     </div>
 
-    <script>
-      // BOTÓN PARA ABRIR POPUP
-      const openPopupButton = document.querySelector(".profile__edit-button");
-      const popup = document.querySelector("#edit-popup");
-      const closePopupButton = document.querySelector(".popup__close-button");
-
-      // INPUTS
-      const nameInput = document.querySelector("#name-input");
-      const jobInput = document.querySelector("#job-input");
-
-      // BOTÓN GUARDAR
-      const submitButton = document.querySelector(".popup__submit-button");
-
-      // ----- Función para abrir popup -----
-      function openPopup() {
-        popup.style.display = "flex";
-      }
-
-      // ----- Función para cerrar popup -----
-      function closePopup() {
-        popup.style.display = "none";
-
-        // Limpiar los campos al cerrar
-        nameInput.value = "";
-        jobInput.value = "";
-        checkInputs(); // Actualizar el estado del botón
-      }
-
-      // Eventos
-      openPopupButton.addEventListener("click", openPopup);
-      closePopupButton.addEventListener("click", closePopup);
-
-      // ----- HABILITAR/DESHABILITAR BOTÓN -----
-      function checkInputs() {
-        if (nameInput.value.trim() !== "" && jobInput.value.trim() !== "") {
-          submitButton.disabled = false;
-          submitButton.classList.add("popup__submit-button_enabled");
-          submitButton.classList.remove("popup__submit-button_disabled");
-        } else {
-          submitButton.disabled = true;
-          submitButton.classList.remove("popup__submit-button_enabled");
-          submitButton.classList.add("popup__submit-button_disabled");
-        }
-      }
-
-      // Escucha cambios en ambos campos
-      nameInput.addEventListener("input", checkInputs);
-      jobInput.addEventListener("input", checkInputs);
-    </script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>
