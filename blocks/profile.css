@@ -39,7 +39,7 @@
     color: #fff;
 }
 
-.profile__name_edit-button {
+.profile__name-wrapper {
     display: flex;
     align-items: center;
     height: auto;
