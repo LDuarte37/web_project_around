@@ -2,20 +2,24 @@
 <html lang="es">
   <head>
     <title>Around the U.S.</title>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Proyecto final para el sprint 7 de TripleTen"
-    >
-    <meta name="author" content="Luis Duarte" >
-    <meta name="keywords" content="TripleTen, Sprint 7" >
-    <link rel="stylesheet" href="pages/index.css" >
+    />
+    <meta name="author" content="Luis Duarte" />
+    <meta name="keywords" content="TripleTen, Sprint 7" />
+    <link rel="stylesheet" href="pages/index.css" />
   </head>
   <body class="page">
     <header class="header">
-      <img src="images/logo.svg" alt="Around the U.S. logo" class="header__logo" >
-      <hr class="header__divider">
+      <img
+        src="images/logo.svg"
+        alt="Around the U.S. logo"
+        class="header__logo"
+      />
+      <hr class="header__divider" />
     </header>
 
     <main class="content">
@@ -25,7 +29,7 @@
             <img
               src="images/avatar.jpg"
               alt="Foto de perfil de Jacques Cousteau"
-            >
+            />
           </div>
 
           <div class="profile__text">
@@ -36,7 +40,7 @@
                   src="images/edit.svg"
                   alt="Edit icon"
                   class="profile__edit-icon"
-                >
+                />
               </button>
             </div>
             <span class="profile__role">Explorador</span>
@@ -47,18 +51,19 @@
               src="images/add.svg"
               alt="Add icon"
               class="profile__add-icon"
-            >
+            />
           </button>
         </div>
       </section>
 
       <section class="elements">
+        <!--
         <div class="card">
           <img
             src="images/img_ValleYosemite.jpg"
             alt="Valle de Yosemite"
             class="card__image"
-          >
+          />
           <div class="card__info">
             <h3 class="card__name">Valle de Yosemite</h3>
             <button class="card__like-btn">
@@ -66,7 +71,7 @@
                 src="images/likeBTN.svg"
                 alt="Like Button"
                 class="card__like-icon"
-              >
+              />
             </button>
           </div>
         </div>
@@ -76,7 +81,7 @@
             src="images/img_LagoLouise.jpg"
             alt="Lago Louise"
             class="card__image"
-          >
+          />
           <div class="card__info">
             <h3 class="card__name">Lago Louise</h3>
             <button class="card__like-btn">
@@ -84,7 +89,7 @@
                 src="images/likeBTN.svg"
                 alt="Like Button"
                 class="card__like-icon"
-              >
+              />
             </button>
           </div>
         </div>
@@ -94,7 +99,7 @@
             src="images/img_MontanasCalvas.jpg"
             alt="Montañas Calvas"
             class="card__image"
-          >
+          />
           <div class="card__info">
             <h3 class="card__name">Montañas Calvas</h3>
             <button class="card__like-btn">
@@ -102,13 +107,13 @@
                 src="images/likeBTN.svg"
                 alt="Like Button"
                 class="card__like-icon"
-              >
+              />
             </button>
           </div>
         </div>
 
         <div class="card">
-          <img src="images/img_Latemar.jpg" alt="Latemar" class="card__image" >
+          <img src="images/img_Latemar.jpg" alt="Latemar" class="card__image" />
           <div class="card__info">
             <h3 class="card__name">Latemar</h3>
             <button class="card__like-btn">
@@ -116,7 +121,7 @@
                 src="images/likeBTN.svg"
                 alt="Like Button"
                 class="card__like-icon"
-              >
+              />
             </button>
           </div>
         </div>
@@ -126,7 +131,7 @@
             src="images/img_Vanois.jpg"
             alt="Vanois National Park"
             class="card__image"
-          >
+          />
           <div class="card__info">
             <h3 class="card__name">Vanois National Park</h3>
             <button class="card__like-btn">
@@ -134,7 +139,7 @@
                 src="images/likeBTN.svg"
                 alt="Like Button"
                 class="card__like-icon"
-              >
+              />
             </button>
           </div>
         </div>
@@ -144,7 +149,7 @@
             src="images/img_LagoDiBraies.jpg"
             alt="Lago di Braies"
             class="card__image"
-          >
+          />
           <div class="card__info">
             <h3 class="card__name">Lago di Braies</h3>
             <button class="card__like-btn">
@@ -152,10 +157,11 @@
                 src="images/likeBTN.svg"
                 alt="Like Button"
                 class="card__like-icon"
-              >
+              />
             </button>
           </div>
         </div>
+        -->
       </section>
     </main>
 
@@ -177,7 +183,7 @@
             id="name-input"
             placeholder="Nombre"
             required
-          >
+          />
 
           <input
             type="text"
@@ -185,7 +191,7 @@
             id="job-input"
             placeholder="Acerca de mí"
             required
-          >
+          />
 
           <button
             type="submit"
@@ -197,6 +203,73 @@
         </form>
       </div>
     </div>
+
+    <!-- POPUP ADD CARD -->
+    <div class="overlay" id="add-card-popup">
+      <div class="popup">
+        <button class="popup__close-button" type="button"></button>
+
+        <h2 class="popup__title">Nueva tarjeta</h2>
+
+        <form class="popup__form" id="add-card-form">
+          <input
+            type="text"
+            class="popup__input"
+            id="card-name-input"
+            placeholder="Título"
+            required
+          />
+
+          <input
+            type="url"
+            class="popup__input"
+            id="card-link-input"
+            placeholder="Enlace de la imagen"
+            required
+          />
+
+          <button
+            type="submit"
+            class="popup__submit-button popup__submit-button_disabled"
+            disabled
+          >
+            Crear
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- POPUP IMAGE -->
+    <div class="overlay" id="image-popup">
+      <div class="popup popup_type_image">
+        <figure class="popup__image-container">
+          <button
+            class="popup__close-button popup__close-button_type_image"
+            type="button"
+          ></button>
+
+          <img src="" alt="" class="popup__image" />
+          <figcaption class="popup__caption"></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <div class="card">
+        <button class="card__delete-btn" type="button"></button>
+        <img src="" alt="Card Image" class="card__image" />
+        <div class="card__info">
+          <h3 class="card__name"></h3>
+          <button class="card__like-btn">
+            <img
+              src="images/likeBTN.svg"
+              alt="Like Button"
+              class="card__like-icon"
+            />
+          </button>
+        </div>
+      </div>
+    </template>
 
     <script src="scripts/index.js"></script>
   </body>
