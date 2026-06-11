@@ -38,36 +38,57 @@
   outline: none;
 }
 
+
+/* ----- Errores de validación ----- */
+.popup__input_type_error {
+  border-bottom: 1px solid #ff0000;
+}
+
+.popup__input-error {
+  display: block;
+  min-height: 30px;
+  margin-top: -15px;
+  margin-bottom: 13px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  opacity: 0;
+}
+
+.popup__error_visible {
+  opacity: 1;
+}
+
 /* ----- Botón deshabilitado ----- */
-.popup__submit-button {
+.popup__button {
   width: 100%;
   padding: 16px 0;
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
   border: none;
+  background: black;
+  color: white;
 
   transition: opacity 0.3s ease-in-out;
 }
 
-.popup__submit-button:hover {
+.popup__button:hover {
   opacity: 0.8;
 }
 
 /* Estilo del botón desactivado */
-.popup__submit-button_disabled {
+.popup__button_disabled {
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.2);
   cursor: default;
 }
 
-/* Estilo del botón activo */
-.popup__submit-button_enabled {
-  background: black;
-  color: white;
-  cursor: pointer;
+.popup__button_disabled:hover {
+  opacity: 1;
 }
+
 
 .popup_type_image {
   position: relative;
