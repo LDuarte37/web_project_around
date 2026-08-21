@@ -1,3 +1,6 @@
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -34,7 +37,6 @@ const validationConfig = {
   errorClass: "popup__error_visible"
 };
 
-const cardTemplate = document.querySelector("#card-template").content;
 const cardsContainer = document.querySelector(".elements");
 
 const editProfileButton = document.querySelector(".profile__edit-button");
@@ -146,9 +148,12 @@ function handleAddCardSubmit(event) {
     return;
   }
 
-  const newCard = createCard(cardNameInput.value, cardLinkInput.value);
+  const newCard = createCard({
+    name: cardNameInput.value,
+    link: cardLinkInput.value
+  });
 
-  cardsContainer.prepend(newCard);
+  cardsContainer.prepend(newCard); 
   closeAddCardPopup();
 }
 
@@ -163,37 +168,14 @@ function closeImagePopup() {
   closeModal(imagePopup);
 }
 
-function createCard(name, link) {
-  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
-  const cardImage = cardElement.querySelector(".card__image");
-  const cardName = cardElement.querySelector(".card__name");
-  const likeButton = cardElement.querySelector(".card__like-btn");
-  const likeIcon = cardElement.querySelector(".card__like-icon");
-  const deleteButton = cardElement.querySelector(".card__delete-btn");
+function createCard(cardData) {
+  const card = new Card(cardData, "#card-template", openImagePopup);
 
-  cardImage.src = link;
-  cardImage.alt = name;
-  cardName.textContent = name;
-
-  cardImage.addEventListener("click", () => {
-    openImagePopup(name, link);
-  });
-
-  likeButton.addEventListener("click", () => {
-    likeIcon.src = likeIcon.src.includes("likeBTN.svg")
-      ? "images/likeBTN_Active.svg"
-      : "images/likeBTN.svg";
-  });
-
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  return cardElement;
+  return card.generateCard();
 }
 
 initialCards.forEach((cardData) => {
-  const cardElement = createCard(cardData.name, cardData.link);
+  const cardElement = createCard(cardData);
   cardsContainer.append(cardElement);
 });
 
