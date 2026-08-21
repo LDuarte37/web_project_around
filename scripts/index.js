@@ -62,6 +62,9 @@ const popupCaption = imagePopup.querySelector(".popup__caption");
 
 const popupList = [editProfilePopup, addCardPopup, imagePopup];
 
+const editProfileValidator = new FormValidator(validationConfig, editProfileForm);
+const addCardValidator = new FormValidator(validationConfig, addCardForm);
+
 function openModal(popupElement) {
   popupElement.style.display = "flex";
   document.addEventListener("keydown", closePopupByEsc);
@@ -108,13 +111,13 @@ function openEditProfilePopup() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileRole.textContent;
   openModal(editProfilePopup);
-  resetValidation(editProfileForm, validationConfig);
+  editProfileValidator.resetValidation();
 }
 
 function closeEditProfilePopup() {
   closeModal(editProfilePopup);
   editProfileForm.reset();
-  resetValidation(editProfileForm, validationConfig);
+  editProfileValidator.resetValidation();
 }
 
 function handleEditProfileSubmit(event) {
@@ -132,13 +135,13 @@ function handleEditProfileSubmit(event) {
 function openAddCardPopup() {
   addCardForm.reset();
   openModal(addCardPopup);
-  resetValidation(addCardForm, validationConfig);
+  addCardValidator.resetValidation();
 }
 
 function closeAddCardPopup() {
   closeModal(addCardPopup);
   addCardForm.reset();
-  resetValidation(addCardForm, validationConfig);
+  addCardValidator.resetValidation();
 }
 
 function handleAddCardSubmit(event) {
@@ -179,7 +182,8 @@ initialCards.forEach((cardData) => {
   cardsContainer.append(cardElement);
 });
 
-enableValidation(validationConfig);
+editProfileValidator.enableValidation();
+addCardValidator.enableValidation();
 
 editProfileButton.addEventListener("click", openEditProfilePopup);
 editProfileCloseButton.addEventListener("click", closeEditProfilePopup);
