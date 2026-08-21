@@ -1,5 +1,10 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
+import {
+  openModal,
+  closeModal,
+  closePopupByOverlayClick
+} from "./utils.js";
 
 const initialCards = [
   {
@@ -64,48 +69,6 @@ const popupList = [editProfilePopup, addCardPopup, imagePopup];
 
 const editProfileValidator = new FormValidator(validationConfig, editProfileForm);
 const addCardValidator = new FormValidator(validationConfig, addCardForm);
-
-function openModal(popupElement) {
-  popupElement.style.display = "flex";
-  document.addEventListener("keydown", closePopupByEsc);
-}
-
-function closeModal(popupElement) {
-  popupElement.style.display = "none";
-  document.removeEventListener("keydown", closePopupByEsc);
-}
-
-function closePopupByElement(popupElement) {
-  if (popupElement === editProfilePopup) {
-    closeEditProfilePopup();
-    return;
-  }
-
-  if (popupElement === addCardPopup) {
-    closeAddCardPopup();
-    return;
-  }
-
-  closeImagePopup();
-}
-
-function closePopupByOverlayClick(event) {
-  if (event.target === event.currentTarget) {
-    closePopupByElement(event.currentTarget);
-  }
-}
-
-function closePopupByEsc(event) {
-  if (event.key === "Escape") {
-    const openedPopup = popupList.find((popupElement) => {
-      return popupElement.style.display === "flex";
-    });
-
-    if (openedPopup) {
-      closePopupByElement(openedPopup);
-    }
-  }
-}
 
 function openEditProfilePopup() {
   nameInput.value = profileName.textContent;
