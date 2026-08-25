@@ -119,7 +119,7 @@ function handleAddCardSubmit(event) {
     link: cardLinkInput.value
   });
 
-  cardsContainer.prepend(newCard); 
+  cardsContainer.prepend(newCard);
   closeAddCardPopup();
 }
 
@@ -145,8 +145,8 @@ initialCards.forEach((cardData) => {
   cardsContainer.append(cardElement);
 });
 
-editProfileValidator.enableValidation();
-addCardValidator.enableValidation();
+editProfileValidator.setEventListeners();
+addCardValidator.setEventListeners();
 
 editProfileButton.addEventListener("click", openEditProfilePopup);
 editProfileCloseButton.addEventListener("click", closeEditProfilePopup);
