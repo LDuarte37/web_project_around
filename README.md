@@ -36,10 +36,14 @@ Este proyecto fue desarrollado como parte del programa de Desarrollo Web de Trip
 
 El proyecto divide la lógica principal en diferentes módulos:
 
-- `Card.js`: contiene la clase encargada de crear y controlar las tarjetas.
-- `FormValidator.js`: contiene la lógica de validación de formularios.
-- `utils.js`: contiene funciones reutilizables para abrir y cerrar ventanas emergentes.
-- `index.js`: conecta los diferentes componentes de la aplicación.
+- `Card.js`: crea y controla cada tarjeta.
+- `FormValidator.js`: gestiona la validación de los formularios.
+- `Section.js`: renderiza y agrega elementos a la sección de tarjetas.
+- `Popup.js`: contiene el comportamiento común de las ventanas emergentes.
+- `PopupWithImage.js`: controla la ventana emergente para visualizar imágenes.
+- `PopupWithForm.js`: controla las ventanas emergentes que contienen formularios.
+- `UserInfo.js`: obtiene y actualiza la información del perfil.
+- `index.js`: crea las instancias de las clases y conecta los componentes de la aplicación.
 
 ## GitHub Pages
 
